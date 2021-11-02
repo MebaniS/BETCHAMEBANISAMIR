@@ -1,0 +1,58 @@
+<%- include ('./boostrap') %> <%- include ('./partials/messages') %>
+
+<%- include ('./nav') %>
+<center>
+<div class="card" style="width: 18rem;">
+  <div class="card-body"> 
+    <h5 class="card-title">Creer Partie</h5>
+    <form action="/games/create" method="POST">
+      <div>
+        <label for="gameName">Nom Partie</label>
+        <input
+          type="name"
+          name="gameName"
+          placeholder="Nom"
+          value="<%= typeof name != 'undefined' ? name : '' %>"
+        />
+      </div>
+      <div>
+        <label for="opponentMail">Mail du J2</label>
+        <input
+          type="mail"
+          name="opponentMail"
+          placeholder="Mail Adversaire"
+          value="<%= typeof opponent != 'undefined' ? opponent : '' %>"
+        />
+      </div><br>
+      <button type="submit" class="btn btn-primary btn-block">Creer Partie</button>
+    </form>
+  </div>
+</div>
+</center>
+
+  <div class="bg-light p-5 rounded">
+    <h1>Liste des parties</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nom Partie</th>
+          <th scope="col">Owner Partie</th>
+          <th scope="col">Adversaire</th>
+          <th scope="col">Status</th>
+          <th scope="col">Lien</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < games.length; i++) { %>
+        <tr>
+          <td><%= games[i].name %></td>
+          <td><%= games[i].player.mail %></td>
+          <td><%= games[i].opponent.mail %></td>
+          <td><%= games[i].status %></td>
+          <td><a href="http://localhost:3000/games/join/<%= games[i].name %>">http://localhost:3000/games/join/<%= games[i].name %></a></td>
+          <td><a href="http://localhost:3000/games/delete/<%= games[i].name %>">Supprimer</a></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>

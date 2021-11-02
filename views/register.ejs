@@ -1,0 +1,71 @@
+<%- include ('./boostrap') %>
+<link href="/public/css/signin.css" rel="stylesheet" />
+
+<body class="text-center">
+  <main class="form-signin">
+    <form action="/users/register" method="POST">
+      <img
+        class="mb-4"
+        src="/public/img/BG.png"
+        alt=""
+        width="150"
+        height="150"
+      />
+      <h1 class="h3 mb-3 fw-normal"><b>S'inscrire</b></h1>
+      <%- include ('./partials/messages') %>
+
+      <div class="form-floating">
+        <label for="floatingInput">Nom</label>
+        <input
+          type="name"
+          name="name"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Nom"
+          value="<%= typeof name != 'undefined' ? name : '' %>"
+        />
+      </div>
+
+      <div class="form-floating">
+        <label for="floatingPassword">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Email"
+          value="<%= typeof email != 'undefined' ? email : '' %>"
+        />
+      </div>
+
+      <div class="form-floating">
+        <label for="floatingPassword">Mot de Passe</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="MDP"
+          value="<%= typeof password != 'undefined' ? password : '' %>"
+        />
+      </div>
+
+      <div class="form-floating">
+        <label for="floatingPassword">Confirmer Mot de Passe</label>
+        <input
+          type="password"
+          name="password2"
+          class="form-control"
+          placeholder="MDPConfirm"
+          value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+        />
+      </div>
+
+      <div class="checkbox mb-3"></div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">
+        S'inscrire
+      </button>
+      <p >Se connecter ? <a href="/users/login">Login</a></p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+    </form>
+  </main>
+</body>

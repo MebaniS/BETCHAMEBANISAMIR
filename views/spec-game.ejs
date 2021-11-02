@@ -1,0 +1,38 @@
+<%- include ('./boostrap') %>
+<body>
+    
+    <main>
+      <div class="container py-4">
+    
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold"><p>Nom : <%= game.name %></p></h1>
+            <p class="col-md-8 fs-4">Status : <%= game.status %></p>
+            <p class="col-md-8 fs-4">Point de vue: Spectateur</p>
+          </div>
+        </div>
+    
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-white bg-dark rounded-3">
+              <h3>Joueur 1 : <%= game.player.mail %><b></b></h3>
+              <p>Piece : <%= game.player.coin %></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h3>Joueur 2 : <%= game.opponent.mail %></h3>
+              <p>Piece : <%= game.opponent.coin %></p>
+            </div>
+          </div>
+        </div>
+    
+        <footer class="pt-3 mt-4 text-muted border-top">
+          &copy; 2021
+        </footer>
+      </div>
+    </main>
+    
+    
+        
+      </body>
