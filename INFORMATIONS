@@ -1,0 +1,4 @@
+Il faut npm i darkmode-js pour le mode nuit.
+Il y'a pas mal de soucis pour les pages d'erreur(personne voulant rejoindre une partie alors qu'il n'est pas login par exemple) ca signale pas le fait qu'il ne peut pas car 
+il n'est pas connecté mais une erreur est crée , de même pour la creation d'une partie sans le mail exacte page erreur affiché. 
+Merci
